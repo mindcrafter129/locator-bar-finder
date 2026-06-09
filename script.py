@@ -47,10 +47,10 @@ def main():
     root = tk.Tk()
     root.withdraw()
     
-    print("mc doxxer lmao")
-    print("step 1: Copy position with f3 + c then move to the left and reposition ur locator bar.")
-    print("  - get 2 or more points for better accuracy.")
-    print("  - press Y if you want to get the y coord.")
+    print("Locator Bar Finder")
+    print("Step 1: Copy position with f3 + c then move to the left and reposition ur locator bar.")
+    print("  - Get 2 or more points for better accuracy.")
+    print("  - Press Y if you want to get the y coord.")
     
     points, last_clip = [], ""
     while True:
@@ -76,7 +76,7 @@ def main():
         time.sleep(0.1)
 
     ix, iz = calculate_xz(points)
-    print(f"\nchanging to y with ({len(points)} pts): {ix:.1f}, {iz:.1f}")
+    print(f"\nChanging to y with {len(points)} points: {ix:.1f}, {iz:.1f}")
     
     print("\nstep 2: Copy pos for bottom edge")
     p_low = None
@@ -85,7 +85,7 @@ def main():
         if clip != last_clip and "tp @s" in clip:
             last_clip = clip
             p_low = parse_f3c(clip)
-            if p_low: print("got the bottom")
+            if p_low: print("Got the bottom edge pos")
         time.sleep(0.1)
 
     print("step 3: Copy pos for top edge")
@@ -95,7 +95,7 @@ def main():
         if clip != last_clip and "tp @s" in clip:
             last_clip = clip
             p_high = parse_f3c(clip)
-            if p_high: print("got the top")
+            if p_high: print("Got the top edge pos")
         time.sleep(0.1)
 
     iy = calculate_y(ix, iz, p_low, p_high)
