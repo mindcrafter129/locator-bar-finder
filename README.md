@@ -1,6 +1,9 @@
 # Locator Bar Finder
 ### A tool for modern (1.21.6+) versions of minecraft that alllows you to determine the position of a player with just the locator bar.
 
+## Requirements:
+- Python 3.x
+
 ## Tutorial
 
 **Step 1**: Look at the target in the middle.
